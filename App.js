@@ -1,10 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 import MainTopTabs from './src/Navigation/MainTopTabsNavigation';
+import ChatRoom from './src/screens/ChatRoom';
+import Contacts from './src/screens/Contacts';
 
 const Stack = createStackNavigator();
 const App = () => {
@@ -43,6 +45,18 @@ const App = () => {
       >
         
         <Stack.Screen name='Home' component={MainTopTabs} />
+        <Stack.Screen name='ChatRoom' component={ChatRoom} />
+        <Stack.Screen name='Contacts' component={Contacts} 
+          options={({route}) => ({ 
+            title: 'Select Contact',
+            headerTitle: props => (
+              <View>
+                <Text {...props}> Select Contact </Text>
+                <Text> { route.params.contactCount } contacts </Text>
+              </View>
+            )
+          })}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

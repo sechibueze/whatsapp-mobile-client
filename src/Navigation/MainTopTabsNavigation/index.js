@@ -1,7 +1,7 @@
 import React from 'react';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { Ionicons } from '@expo/vector-icons';
-import ChatRoomFeed from '../../components/ChatRoomFeed';
+import Chats from '../../screens/Chats';
 import StatusFeed from '../../components/StatusFeed';
 import CallsFeed from '../../components/CallsFeed';
 import { Dimensions } from 'react-native';
@@ -47,7 +47,7 @@ const MainTopTabs = () => {
                 }} 
                 component={Home}
             />
-            <Tabs.Screen name='Chats' component={ChatRoomFeed} />
+            <Tabs.Screen name='Chats' component={Chats} />
             <Tabs.Screen name='Status' component={StatusFeed} />
             <Tabs.Screen name='Calls' component={CallsFeed} />
         </Tabs.Navigator>

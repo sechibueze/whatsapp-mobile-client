@@ -1,13 +1,14 @@
 import { StyleSheet}  from 'react-native';
 
 export default StyleSheet.create({
-    itemWrap: {
+    container: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         padding: 10,
-        backgroundColor: '#ddd'
+        backgroundColor: '#ddd',
+        borderBottomColor: 'grey'
     },
-    itemLeft:{
+    chatPreview:{
         flexDirection: 'row',
         justifyContent: 'flex-start'
     },
@@ -34,7 +35,7 @@ export default StyleSheet.create({
         fontWeight: 'normal',
         fontWeight: 'normal'
     },
-    rightWrap: {
+    chatStats: {
         flexDirection: 'column',
         justifyContent: 'space-between',
         alignItems: 'center'
@@ -42,7 +43,7 @@ export default StyleSheet.create({
     timestamp: {
         color: '#444'
     },
-    messageCount: {
+    chatCount: {
         width: 25,
         height: 25,
         borderRadius: 25/2,
